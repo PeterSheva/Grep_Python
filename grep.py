@@ -4,7 +4,7 @@ import sys
 import re
 
 
-def output(line, non_match=False):
+def output(line):
         print(line)
 
 
