@@ -5,7 +5,7 @@ import re
 
 
 def output(line):
-        print(line)
+    print(line)
 
 
 def numerated_otput(line, number, non_match=False):
