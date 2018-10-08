@@ -1,4 +1,3 @@
-
 import argparse
 import sys
 import re
@@ -25,7 +24,6 @@ def context(lines, params, reg):
         after = params.context
     else:
         after = params.after_context
-
     buf = deque(lines, before)
     after_print = 0
     i = 0
@@ -68,18 +66,17 @@ def grep(lines, params):
             if bool(reg.search(line)) != params.invert:
                 counter += 1
         output(str(counter))
-    elif(params.context or params.before_context or params.after_context):
-        context(lines, params, reg)
     else:
-        i = 0
-        for line in lines:
-            i += 1
-            line = line.rstrip()
-            if bool(reg.search(line)) != params.invert:
-                if(params.line_number):
-                    numerated_otput(line, i)
-                else:
-                    output(line)
+        context(lines, params, reg)
+      #  i = 0
+       # for line in lines:
+        #    i += 1
+         #   line = line.rstrip()
+          #  if bool(reg.search(line)) != params.invert:
+           #     if(params.line_number):
+            #        numerated_otput(line, i)
+             #   else:
+              #      output(line)
 
                     
 def parse_args(args):
