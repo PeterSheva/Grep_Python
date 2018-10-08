@@ -38,7 +38,7 @@ def context(lines, params, reg):
             for k in range(len(buf)):
                 show_line = buf.popleft()
                 if(params.line_number):
-                    numerated_otput(show_line[1], show_line[0], True)
+                    numerated_otput(show_line[1], show_line[0], show_line[2])
                 else:
                     output(show_line[1])
             if(params.line_number):
@@ -52,7 +52,7 @@ def context(lines, params, reg):
                 output(line)
             after_print -= 1
         else:
-            buf.append((i, line))
+            buf.append((i, line, True))
 
 
 def grep(lines, params):
